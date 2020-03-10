@@ -1,0 +1,17 @@
+{
+    "short_name": "CarApp",
+    "name": "Car application",
+    "description" : "Car app exercise",
+    "icons": [
+        {
+        "src":"cars.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        }
+    ],
+    "start_url": "/cars.html",
+    "background_color": "white",
+    "theme_color": "black",
+    "display": "standalone",
+    "scope": "/"
+}
