@@ -1,13 +1,12 @@
 if ('serviceWorker' in navigator) {
-    // Register a service worker hosted at the root of the
-    // site using the default scope.
     navigator.serviceWorker.register('/service-worker.js').then(function
         (registration) {
         console.log('Service worker registration succeeded:', registration);
-    }, /*catch*/ function (error) {
-        console.log('Service worker registration failed:',
-            error);
+    }, function (error) {
+        console.log('Service worker registration failed:', error);
     });
+
+    
 } else {
     console.log('Service workers are not supported.');
 }
@@ -21,7 +20,7 @@ window.addEventListener('load', () => {
             // registered!
         },
         err => {
-            console.error('SW registration failed!, err)
+            console.error('SW registration failed!', err)
     }
     )
 })
@@ -29,7 +28,7 @@ window.addEventListener('load', () => {
 self.addEventListener('install', event => {
     event.waitUntil(
         caches
-            .open('index')
+            .open('Car application')
             .then(cache =>
                 cache.addAll([
                     'cars.png',
